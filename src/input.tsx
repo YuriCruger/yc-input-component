@@ -1,14 +1,22 @@
-import React, { ReactNode, forwardRef } from "react";
+import {
+  ButtonHTMLAttributes,
+  HTMLAttributes,
+  InputHTMLAttributes,
+  LabelHTMLAttributes,
+  ReactNode,
+  forwardRef,
+} from "react";
 import { twMerge } from "tailwind-merge";
-import type {
-  FormFieldType,
-  LabelType,
-  ButtonIconType,
-  ErrorMessageType,
-} from "./index.d";
 
 export const Root = ({ children }: { children: ReactNode }) => {
   return <div className="relative">{children}</div>;
+};
+
+type FormFieldType = InputHTMLAttributes<HTMLInputElement> & {
+  value: string;
+  hasError?: boolean;
+  initialBorderColor: "gray" | "white";
+  focusedBorderColor: "sky";
 };
 
 export const FormField = forwardRef<HTMLInputElement, FormFieldType>(
@@ -61,6 +69,15 @@ export const FormField = forwardRef<HTMLInputElement, FormFieldType>(
     );
   }
 );
+
+type LabelType = LabelHTMLAttributes<HTMLLabelElement> & {
+  label: string;
+  hasInputValue: boolean;
+  bgColor: "zinc" | "white" | "gray";
+  initialTextColor: "gray" | "white";
+  focusedTextColor: "sky";
+  hasError?: boolean;
+};
 
 export const Label = ({
   label,
@@ -116,6 +133,10 @@ export const Label = ({
   );
 };
 
+type ButtonIconType = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode;
+};
+
 export const ButtonIcon = ({
   className,
   children,
@@ -129,6 +150,10 @@ export const ButtonIcon = ({
       {children}
     </button>
   );
+};
+
+type ErrorMessageType = HTMLAttributes<HTMLParagraphElement> & {
+  errorMessage: string | undefined;
 };
 
 export const ErrorMessage = ({
