@@ -12,6 +12,10 @@ After installation, manually move the `input.tsx` file to your project's compone
 
 `cp node_modules/yc-input-component/src/input.tsx /*your/folder/components*/`
 
+### Demo
+
+![Input Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnVtM2lzdm9kemN4dWZ1OW5mdWRyMmxiOXlpYWxzcWxsNmM3MjB6biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tZI4XpbWzvfXPzUxgd/giphy.gif)
+
 ### Usage Example
 
 Here is a simple example of how to use the component:
